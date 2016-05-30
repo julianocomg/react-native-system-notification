@@ -145,6 +145,10 @@ public class Notification {
             notificationBuilder.setOnlyAlertOnce(attributes.onlyAlertOnce);
         }
 
+        if (attributes.ongoing != null) {
+            notificationBuilder.setOngoing(attributes.ongoing);
+        }
+
         if (attributes.tickerText != null) {
             notificationBuilder.setTicker(attributes.tickerText);
         }
