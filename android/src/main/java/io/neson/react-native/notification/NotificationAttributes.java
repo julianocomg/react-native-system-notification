@@ -108,7 +108,7 @@ public class NotificationAttributes {
         if (readableMap.hasKey("repeatCount")) repeatCount = readableMap.getInt("repeatCount");
         if (readableMap.hasKey("endAt")) endAt = Long.parseLong(readableMap.getString("endAt"));
 
-        if (readableMap.hasKey("priority")) priority = readableMap.getInt("priority");
+        //if (readableMap.hasKey("priority")) priority = readableMap.getInt("priority");
         if (readableMap.hasKey("smallIcon")) smallIcon = readableMap.getString("smallIcon");
         if (readableMap.hasKey("largeIcon")) largeIcon = readableMap.getString("largeIcon");
         if (readableMap.hasKey("sound")) sound = readableMap.getString("sound");
@@ -156,7 +156,7 @@ public class NotificationAttributes {
         if (repeatCount != null) writableMap.putInt("repeatCount", repeatCount);
         if (endAt != null) writableMap.putString("endAt", Long.toString(endAt));
 
-        if (priority != null) writableMap.putInt("priority", priority);
+        //if (priority != null) writableMap.putInt("priority", priority);
         if (smallIcon != null) writableMap.putString("smallIcon", smallIcon);
         if (largeIcon != null) writableMap.putString("largeIcon", largeIcon);
         if (sound != null) writableMap.putString("sound", sound);

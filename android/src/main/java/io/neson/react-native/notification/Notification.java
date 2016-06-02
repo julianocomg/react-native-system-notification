@@ -122,7 +122,7 @@ public class Notification {
             .setContentIntent(getContentIntent());
 
         if (attributes.priority != null) {
-            notificationBuilder.setPriority(attributes.priority);
+            //notificationBuilder.setPriority(attributes.priority);
         }
 
         int defaults = 0;
