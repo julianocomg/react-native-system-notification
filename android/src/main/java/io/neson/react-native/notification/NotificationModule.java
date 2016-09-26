@@ -39,7 +39,6 @@ import android.util.Log;
  */
 public class NotificationModule extends ReactContextBaseJavaModule {
     final static String PREFERENCES_KEY = "ReactNativeSystemNotification";
-    public Activity mActivity = null;
     public Context mContext = null;
     public NotificationManager mNotificationManager = null;
 
@@ -51,11 +50,10 @@ public class NotificationModule extends ReactContextBaseJavaModule {
     /**
      * Constructor.
      */
-    public NotificationModule(ReactApplicationContext reactContext, Activity activity) {
+    public NotificationModule(ReactApplicationContext reactContext) {
         super(reactContext);
 
         this.mContext = reactContext;
-        this.mActivity = activity;
         this.mNotificationManager = (NotificationManager) new NotificationManager(reactContext);
 
         listenNotificationEvent();
@@ -243,19 +241,6 @@ public class NotificationModule extends ReactContextBaseJavaModule {
     @Override
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();
-
-        if (mActivity == null) return constants;
-        Intent intent = mActivity.getIntent();
-        Bundle extras = intent.getExtras();
-
-        if (extras != null) {
-            Integer initialSysNotificationID = extras.getInt("initialSysNotificationId");
-            if (initialSysNotificationID != null) {
-                constants.put("initialSysNotificationID", initialSysNotificationID);
-                constants.put("initialSysNotificationAction", extras.getString("initialSysNotificationAction"));
-                constants.put("initialSysNotificationPayload", extras.getString("initialSysNotificationPayload"));
-            }
-        }
 
         return constants;
     }
